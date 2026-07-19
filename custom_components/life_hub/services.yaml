@@ -1,0 +1,278 @@
+# Life Hub Services — 每个提供者 1 个服务
+
+# ========== Yiming (一鸣) ==========
+
+yiming_call_api:
+  name: 一鸣 API
+  description: "通过 method 选择功能，params 传参数。可用 method: get_balance, get_member_info, get_coupon_sum, get_integral, get_user_info, get_app_notice, get_coupon_pools, get_orders, get_my_coupons, get_integral_detail, get_recharge_list, get_app_equity, get_user_info_v2, get_qrcode, get_order, get_transaction_details, get_default_address, get_nearest_store, get_menu, get_sku_info, search_stores, get_delivery_time, get_nearby_addresses, get_store_info, get_region_list, get_current_city, query_nearly_store, query_nearly_store_by_distance, get_nearly_store_one_km, calculate_cart, pre_create_order, submit_order, receive_all_coupons, receive_coupon, claim_all, collect_store_query, collect_store_create"
+  fields:
+    method:
+      name: 方法
+      description: 选择要调用的 API 方法
+      required: true
+      selector:
+        select:
+          options:
+            - "get_balance"
+            - "get_member_info"
+            - "get_coupon_sum"
+            - "get_integral"
+            - "get_user_info"
+            - "get_app_notice"
+            - "get_coupon_pools"
+            - "get_orders"
+            - "get_my_coupons"
+            - "get_integral_detail"
+            - "get_recharge_list"
+            - "get_app_equity"
+            - "get_user_info_v2"
+            - "get_qrcode"
+            - "get_order"
+            - "get_transaction_details"
+            - "get_default_address"
+            - "get_nearest_store"
+            - "get_menu"
+            - "get_sku_info"
+            - "search_stores"
+            - "get_delivery_time"
+            - "get_nearby_addresses"
+            - "get_store_info"
+            - "get_region_list"
+            - "get_current_city"
+            - "query_nearly_store"
+            - "query_nearly_store_by_distance"
+            - "get_nearly_store_one_km"
+            - "calculate_cart"
+            - "pre_create_order"
+            - "submit_order"
+            - "receive_all_coupons"
+            - "receive_coupon"
+            - "claim_all"
+            - "collect_store_query"
+            - "collect_store_create"
+    params:
+      name: 参数
+      description: 方法参数（JSON对象），根据 method 不同传入不同参数
+      required: false
+      selector:
+        object:
+
+# ========== Fliggy (飞猪) ==========
+
+fliggy_call_api:
+  name: 飞猪 API
+  description: "通过 method 选择功能，params 传参数。可用 method: fast_search, ai_search, search_flight, search_hotel, search_train, search_poi, search_marriott_hotel, search_marriott_package"
+  fields:
+    method:
+      name: 方法
+      description: 选择要调用的功能
+      required: true
+      selector:
+        select:
+          options:
+            - "fast_search"
+            - "ai_search"
+            - "search_flight"
+            - "search_hotel"
+            - "search_train"
+            - "search_poi"
+            - "search_marriott_hotel"
+            - "search_marriott_package"
+    params:
+      name: 参数
+      description: "方法参数（JSON对象）。例如 search_flight 需要 {\"origin\": \"北京\", \"destination\": \"上海\", \"dep_date\": \"2026-08-01\"}"
+      required: false
+      selector:
+        object:
+
+# ========== Ctrip (携程) ==========
+
+ctrip_call_api:
+  name: 携程 API
+  description: "通过 method 选择功能，params 传参数。可用 method: query, search_hotel"
+  fields:
+    method:
+      name: 方法
+      description: 选择要调用的功能
+      required: true
+      selector:
+        select:
+          options:
+            - "query"
+            - "search_hotel"
+    params:
+      name: 参数
+      description: "方法参数（JSON对象）。例如 query 需要 {\"query\": \"故宫门票\"}"
+      required: false
+      selector:
+        object:
+
+# ========== McDonald's (麦当劳) ==========
+
+mcdonalds_call_tool:
+  name: 麦当劳 MCP
+  description: 调用麦当劳 MCP 工具
+  fields:
+    tool_name:
+      name: 工具名称
+      description: MCP 工具名称
+      required: true
+      selector:
+        text:
+    arguments:
+      name: 参数
+      description: 工具参数（JSON对象）
+      required: false
+      selector:
+        object:
+
+# ========== Baidu Maps (百度地图) ==========
+
+baidu_map_call_api:
+  name: 百度地图 API
+  description: "通过 method 选择功能，params 传参数。可用 method: search_poi, geocode, reverse_geocode"
+  fields:
+    method:
+      name: 方法
+      description: 选择要调用的功能
+      required: true
+      selector:
+        select:
+          options:
+            - "search_poi"
+            - "geocode"
+            - "reverse_geocode"
+    params:
+      name: 参数
+      description: "方法参数（JSON对象）。例如 search_poi 需要 {\"query\": \"天安门\", \"region\": \"北京\"}"
+      required: false
+      selector:
+        object:
+
+# ========== Meituan (美团) ==========
+
+meituan_call_api:
+  name: 美团 API
+  description: "通过 method 选择功能，params 传参数。可用方法: search_hotel, search_flight, search_train, search_poi, plan_itinerary, get_travel_orders, get_orders, get_coupons, claim_coupon, claim_all_coupons, login, get_address_list, search_poi_waimai, preview_order, submit_order, get_order_status, get_store_info, search_stores"
+  fields:
+    method:
+      name: 方法
+      description: 选择要调用的 API 方法
+      required: true
+      selector:
+        text:
+    params:
+      name: 参数
+      description: 方法参数（JSON对象）
+      required: false
+      selector:
+        object:
+
+# ========== Meituan Travel (美团旅游) ==========
+
+meituan_travel_call_api:
+  name: 美团旅游 API
+  description: "通过 method 选择功能，params 传参数。可用 method: search_hotel, search_flight, search_train, search_poi, plan_itinerary, get_travel_orders"
+  fields:
+    method:
+      name: 方法
+      description: 选择要调用的功能
+      required: true
+      selector:
+        select:
+          options:
+            - "search_hotel"
+            - "search_flight"
+            - "search_train"
+            - "search_poi"
+            - "plan_itinerary"
+            - "get_travel_orders"
+    params:
+      name: 参数
+      description: "方法参数（JSON对象）。例如 search_hotel 需要 {\"query\": \"北京\", \"city\": \"北京\"}"
+      required: false
+      selector:
+        object:
+
+# ========== Gaode Maps (高德地图) ==========
+
+gaode_call_api:
+  name: 高德地图 API
+  description: "通过 method 选择功能，params 传参数。可用 method: search_poi, search_poi_nearby, geocode, reverse_geocode, get_distance, calculate_distance, check_in_polygon"
+  fields:
+    method:
+      name: 方法
+      description: 选择要调用的功能
+      required: true
+      selector:
+        select:
+          options:
+            - "search_poi"
+            - "search_poi_nearby"
+            - "geocode"
+            - "reverse_geocode"
+            - "get_distance"
+            - "calculate_distance"
+            - "check_in_polygon"
+    params:
+      name: 参数
+      description: "方法参数（JSON对象）。例如 search_poi 需要 {\"keywords\": \"天安门\", \"region\": \"北京\"}"
+      required: false
+      selector:
+        object:
+
+# ========== Music (音乐) ==========
+
+music_call_api:
+  name: 音乐 API
+  description: "通过 method 选择功能，params 传参数。可用 method: search_songs, get_playlist, get_ranking"
+  fields:
+    method:
+      name: 方法
+      description: 选择要调用的功能
+      required: true
+      selector:
+        select:
+          options:
+            - "search_songs"
+            - "get_playlist"
+            - "get_ranking"
+    params:
+      name: 参数
+      description: "方法参数（JSON对象）。例如 search_songs 需要 {\"keyword\": \"周杰伦\"}"
+      required: false
+      selector:
+        object:
+
+# ========== Didi (滴滴出行) ==========
+
+didi_call_tool:
+  name: 滴滴出行 MCP
+  description: "通过 tool_name 选择工具，arguments 传参数。可用工具: taxi_estimate, taxi_create_order, taxi_query_order, taxi_cancel_order, taxi_get_driver_location, taxi_generate_ride_app_link, maps_textsearch, maps_place_around, maps_regeocode, maps_direction_driving, maps_direction_transit, maps_direction_walking, maps_direction_bicycling"
+  fields:
+    tool_name:
+      name: 工具名称
+      description: 选择要调用的 MCP 工具
+      required: true
+      selector:
+        select:
+          options:
+            - "taxi_estimate"
+            - "taxi_create_order"
+            - "taxi_query_order"
+            - "taxi_cancel_order"
+            - "taxi_get_driver_location"
+            - "taxi_generate_ride_app_link"
+            - "maps_textsearch"
+            - "maps_place_around"
+            - "maps_regeocode"
+            - "maps_direction_driving"
+            - "maps_direction_transit"
+            - "maps_direction_walking"
+            - "maps_direction_bicycling"
+    arguments:
+      name: 参数
+      description: "工具参数（JSON对象）。例如 taxi_estimate 需要 {\"from_lng\": \"116.397128\", \"from_lat\": \"39.916527\", \"from_name\": \"北京\", \"to_lng\": \"116.407396\", \"to_lat\": \"39.904200\", \"to_name\": \"天安门\"}"
+      required: false
+      selector:
+        object:

@@ -1,0 +1,375 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Life Hub",
+        "description": "Create a Life Hub integration instance."
+      }
+    },
+    "abort": {
+      "single_instance_allowed": "Only one Life Hub instance is allowed."
+    }
+  },
+  "options": {
+    "abort": {
+      "no_options": "No options available."
+    }
+  },
+  "config_subentries": {
+    "meituan": {
+      "initiate_flow": {
+        "user": "Add Meituan",
+        "reconfigure": "Meituan Settings"
+      },
+      "channel_title": "Meituan",
+      "step": {
+        "set_options": {
+          "title": "Add Meituan",
+          "description": "Create a personal developer Token at developer.meituan.com, scan QR code to authorize, then paste it here.\n\n[📖 How to get Token?](https://developer.meituan.com/)",
+          "data": {
+            "api_token": "API Token",
+            "refresh_interval": "Refresh interval (minutes)"
+          }
+        }
+      },
+      "error": {
+        "cannot_connect": "Failed to connect. Please check your API Token."
+      },
+      "abort": {
+        "already_configured": "Meituan is already configured.",
+        "max_instances_reached": "Maximum number of Meituan instances reached."
+      },
+      "entry_type": "Meituan Service"
+    },
+    "ctrip": {
+      "initiate_flow": {
+        "user": "Add Ctrip Travel",
+        "reconfigure": "Ctrip Travel Settings"
+      },
+      "channel_title": "Ctrip Travel",
+      "step": {
+        "set_options": {
+          "title": "Add Ctrip Travel",
+          "description": "Enter your Ctrip WenDao API Token.\n\n[📖 How to get Token?](https://qclaw.qq.com/docs/208231741261246464)",
+          "data": {
+            "api_token": "API Token",
+            "refresh_interval": "Refresh interval (minutes)"
+          }
+        }
+      },
+      "error": {
+        "cannot_connect": "Failed to connect. Please check your API Token."
+      },
+      "abort": {
+        "already_configured": "Ctrip is already configured.",
+        "max_instances_reached": "Maximum number of Ctrip instances reached."
+      },
+      "entry_type": "Ctrip Travel Service"
+    },
+    "yiming": {
+      "initiate_flow": {
+        "user": "Add Yiming",
+        "reconfigure": "Yiming Settings"
+      },
+      "channel_title": "Yiming",
+      "step": {
+        "user": {
+          "title": "Add Yiming Fresh Milk Bar",
+          "description": "Enter your phone number. A verification code will be sent after submission.",
+          "data": {
+            "phone": "Phone number"
+          }
+        },
+        "verify_code": {
+          "title": "Enter Verification Code",
+          "description": "Verification code sent to {phone}. Enter the code to complete login.",
+          "data": {
+            "verification_code": "Verification code"
+          }
+        },
+        "reconfigure": {
+          "title": "Yiming Settings",
+          "data": {
+            "refresh_interval": "Refresh interval (minutes)",
+            "action": "Action"
+          }
+        },
+        "reconfigure_phone": {
+          "title": "Re-login - Enter Phone Number",
+          "description": "Enter a new phone number. A verification code will be sent to this number.",
+          "data": {
+            "phone": "Phone number"
+          }
+        },
+        "reconfigure_verify_code": {
+          "title": "Re-login - Enter Verification Code",
+          "description": "Verification code sent to {phone}. Enter the code to complete login.",
+          "data": {
+            "verification_code": "Verification code"
+          }
+        }
+      },
+      "error": {
+        "code_send_failed": "Failed to send verification code. Please check your phone number.",
+        "invalid_code": "Invalid or expired code. Please request a new one.",
+        "login_failed": "Login failed. Please try again.",
+        "captcha_failed": "Captcha verification failed. Please try again.",
+        "invalid_phone": "Please enter a valid 11-digit phone number."
+      },
+      "abort": {
+        "already_configured": "This Yiming account is already configured.",
+        "max_instances_reached": "Maximum number of Yiming instances reached.",
+        "reconfigure_successful": "Yiming settings updated."
+      },
+      "entry_type": "Yiming Fresh Milk Service"
+    },
+    "tongcheng": {
+      "initiate_flow": {
+        "user": "Add Tongcheng Travel",
+        "reconfigure": "Tongcheng Travel Settings"
+      },
+      "channel_title": "Tongcheng Travel",
+      "step": {
+        "set_options": {
+          "title": "Add Tongcheng Travel",
+          "description": "Enter your Tongcheng OAuth Token.\n\n[📖 How to get Token?](https://m.ly.com/memberauth/oauth2/authorize?client_id=qclaw-288267139f9f1d&redirect_uri=https%3A%2F%2Fauth.ap-guangzhou.tencentags.com%2Fidentities%2Foauth2%2Fcallback%2F2d131483-3941-424d-8b9b-21b368953736&response_type=code&scope=read%20write)",
+          "data": {
+            "token": "Token",
+            "refresh_interval": "Refresh interval (minutes)"
+          }
+        }
+      },
+      "error": {
+        "cannot_connect": "Failed to connect. Please check your Token."
+      },
+      "abort": {
+        "already_configured": "This Tongcheng account is already configured.",
+        "max_instances_reached": "Maximum number of Tongcheng instances reached."
+      },
+      "entry_type": "Tongcheng Travel Service"
+    },
+    "baidu_map": {
+      "initiate_flow": {
+        "user": "Add Baidu Maps",
+        "reconfigure": "Baidu Maps Settings"
+      },
+      "channel_title": "Baidu Maps",
+      "step": {
+        "set_options": {
+          "title": "Add Baidu Maps",
+          "description": "Enter your Baidu Maps API Key.\n\n[📖 How to get Key?](https://qclaw.qq.com/docs/212966665410375680)",
+          "data": {
+            "api_key": "API Key",
+            "refresh_interval": "Refresh interval (minutes)"
+          }
+        }
+      },
+      "error": {
+        "cannot_connect": "Failed to connect. Please check your API Key."
+      },
+      "abort": {
+        "already_configured": "Baidu Maps is already configured.",
+        "max_instances_reached": "Maximum number of Baidu Maps instances reached."
+      },
+      "entry_type": "Baidu Maps Service"
+    },
+    "music": {
+      "initiate_flow": {
+        "user": "Add Music",
+        "reconfigure": "Music Settings"
+      },
+      "channel_title": "Music",
+      "step": {
+        "set_options": {
+          "title": "Add Music",
+          "description": "Select a music platform. QQ Music requires an API Key.\n\n[📖 How to get QQ Music Key?](https://qclaw.qq.com/docs/214847013744275456)",
+          "data": {
+            "platform": "Platform",
+            "api_key": "API Key",
+            "cookie": "Cookie",
+            "refresh_interval": "Refresh interval (minutes)"
+          }
+        }
+      },
+      "error": {
+        "cannot_connect": "Failed to connect."
+      },
+      "abort": {
+        "already_configured": "This platform is already configured.",
+        "max_instances_reached": "Maximum instances reached."
+      },
+      "entry_type": "Music Service"
+    },
+    "mcdonalds": {
+      "initiate_flow": {
+        "user": "Add McDonald's",
+        "reconfigure": "McDonald's Settings"
+      },
+      "channel_title": "McDonald's",
+      "step": {
+        "set_options": {
+          "title": "Add McDonald's",
+          "description": "Enter your McDonald's MCP Token.\n\n[📖 How to get Token?](https://qclaw.qq.com/docs/215059947716583424)",
+          "data": {
+            "api_token": "MCP Token",
+            "refresh_interval": "Refresh interval (minutes)"
+          }
+        }
+      },
+      "error": {
+        "cannot_connect": "Failed to connect. Please check your MCP Token."
+      },
+      "abort": {
+        "already_configured": "This McDonald's token is already configured.",
+        "max_instances_reached": "Maximum number of McDonald's instances reached."
+      },
+      "entry_type": "McDonald's Service"
+    },
+    "fliggy": {
+      "initiate_flow": {
+        "user": "Add Fliggy Travel",
+        "reconfigure": "Fliggy Travel Settings"
+      },
+      "channel_title": "Fliggy Travel",
+      "step": {
+        "set_options": {
+          "title": "Add Fliggy Travel",
+          "description": "Enter your Fliggy MCP API Key.\n\n[📖 How to get API Key?](https://flyai.open.fliggy.com/)",
+          "data": {
+            "api_key": "API Key",
+            "sign_secret": "Sign Secret (optional)",
+            "refresh_interval": "Refresh interval (minutes)"
+          }
+        }
+      },
+      "error": {
+        "cannot_connect": "Failed to connect. Please check your API Key."
+      },
+      "abort": {
+        "already_configured": "This Fliggy API Key is already configured.",
+        "max_instances_reached": "Maximum number of Fliggy instances reached."
+      },
+      "entry_type": "Fliggy Travel Service"
+    },
+    "gaode": {
+      "initiate_flow": {
+        "user": "Add Gaode Maps",
+        "reconfigure": "Gaode Maps Settings"
+      },
+      "channel_title": "Gaode Maps",
+      "step": {
+        "set_options": {
+          "title": "Add Gaode Maps",
+          "description": "Enter your Gaode Maps API Key and security code.\n\n[📖 How to get Key?](https://lbs.amap.com/api/javascript-api-v2/guide/services/web-api)",
+          "data": {
+            "api_key": "API Key",
+            "security_code": "Security Code (optional)",
+            "refresh_interval": "Refresh interval (minutes)"
+          }
+        }
+      },
+      "error": {
+        "cannot_connect": "Failed to connect. Please check your API Key."
+      },
+      "abort": {
+        "already_configured": "This Gaode Maps Key is already configured.",
+        "max_instances_reached": "Maximum number of Gaode Maps instances reached."
+      },
+      "entry_type": "Gaode Maps Service"
+    }
+  },
+  "entity": {
+    "sensor": {
+      "status_meituan": {
+        "name": "Status",
+        "state": {
+          "connected": "Connected",
+          "disconnected": "Disconnected",
+          "error": "Error",
+          "unknown": "Unknown"
+        }
+      },
+      "status_ctrip": {
+        "name": "Status",
+        "state": {
+          "connected": "Connected",
+          "disconnected": "Disconnected",
+          "error": "Error",
+          "unknown": "Unknown"
+        }
+      },
+      "status_yiming": {
+        "name": "Status",
+        "state": {
+          "connected": "Connected",
+          "disconnected": "Disconnected",
+          "error": "Error",
+          "unknown": "Unknown"
+        }
+      },
+      "status_mcdonalds": {
+        "name": "Status",
+        "state": {
+          "connected": "Connected",
+          "disconnected": "Disconnected",
+          "error": "Error",
+          "unknown": "Unknown"
+        }
+      },
+      "status_baidu_map": {
+        "name": "Status",
+        "state": {
+          "connected": "Connected",
+          "disconnected": "Disconnected",
+          "error": "Error",
+          "unknown": "Unknown"
+        }
+      },
+      "status_music": {
+        "name": "Status",
+        "state": {
+          "connected": "Connected",
+          "disconnected": "Disconnected",
+          "error": "Error",
+          "unknown": "Unknown"
+        }
+      },
+      "status_fliggy": {
+        "name": "Status",
+        "state": {
+          "connected": "Connected",
+          "disconnected": "Disconnected",
+          "error": "Error",
+          "unknown": "Unknown"
+        }
+      },
+      "status_gaode": {
+        "name": "Status",
+        "state": {
+          "connected": "Connected",
+          "disconnected": "Disconnected",
+          "error": "Error",
+          "unknown": "Unknown"
+        }
+      },
+      "status_meituan_travel": {
+        "name": "Status",
+        "state": {
+          "connected": "Connected",
+          "disconnected": "Disconnected",
+          "error": "Error",
+          "unknown": "Unknown"
+        }
+      },
+      "status_didi": {
+        "name": "Status",
+        "state": {
+          "connected": "Connected",
+          "disconnected": "Disconnected",
+          "error": "Error",
+          "unknown": "Unknown"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,398 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "生活服务",
+        "description": "创建一个生活服务集成实例。"
+      }
+    },
+    "abort": {
+      "single_instance_allowed": "只允许创建一个生活服务实例。"
+    }
+  },
+  "options": {
+    "abort": {
+      "no_options": "无可配置选项。"
+    }
+  },
+  "config_subentries": {
+    "meituan": {
+      "initiate_flow": {
+        "user": "添加美团",
+        "reconfigure": "美团设置"
+      },
+      "channel_title": "美团",
+      "step": {
+        "set_options": {
+          "title": "添加美团",
+          "description": "请输入你的美团开发者 Token。\n\n📖 [配置指南](https://qclaw.qq.com/docs/210805139605942272.html)\n🔑 [获取 Token](https://developer.meituan.com/zh/v2/dev/token)",
+          "data": {
+            "auth_token": "API Token",
+            "refresh_interval": "刷新间隔（分钟）"
+          }
+        }
+      },
+      "error": {
+        "cannot_connect": "连接失败，请检查 API Token。"
+      },
+      "abort": {
+        "already_configured": "美团已配置。",
+        "max_instances_reached": "已达到最大美团实例数量。"
+      },
+      "entry_type": "美团服务"
+    },
+    "meituan_order": {
+      "initiate_flow": {
+        "user": "添加美团优惠下单",
+        "reconfigure": "美团优惠下单设置"
+      },
+      "channel_title": "美团优惠下单",
+      "step": {
+        "set_options": {
+          "title": "添加美团优惠下单",
+          "description": "请在 QClaw 集成面板中完成美团跑腿助手扫码授权，将获取到的 token 填入 auth_token。\n\n🔑 [获取 Token](https://developer.meituan.com/zh/v2/dev/token)",
+          "data": {
+            "auth_token": "Auth Token",
+            "refresh_interval": "刷新间隔（分钟）"
+          }
+        }
+      },
+      "error": {
+        "cannot_connect": "连接失败，请检查 Token。"
+      },
+      "abort": {
+        "already_configured": "美团优惠下单已配置。",
+        "max_instances_reached": "已达到最大实例数量。"
+      },
+      "entry_type": "美团优惠下单服务"
+    },
+    "ctrip": {
+      "initiate_flow": {
+        "user": "添加携程旅行",
+        "reconfigure": "携程旅行设置"
+      },
+      "channel_title": "携程旅行",
+      "step": {
+        "set_options": {
+          "title": "添加携程旅行",
+          "description": "请输入你的携程问道 API Token。\n\n📖 [配置指南](https://qclaw.qq.com/docs/208231741261246464)\n🔑 [获取 Token](http://t.ctrip.cn/28J6RhL)",
+          "data": {
+            "auth_token": "API Token",
+            "refresh_interval": "刷新间隔（分钟）"
+          }
+        }
+      },
+      "error": {
+        "cannot_connect": "连接失败，请检查 API Token。"
+      },
+      "abort": {
+        "already_configured": "该携程 Token 已配置。",
+        "max_instances_reached": "已达到最大携程实例数量。"
+      },
+      "entry_type": "携程旅行服务"
+    },
+    "yiming": {
+      "initiate_flow": {
+        "user": "添加一鸣真鲜奶吧",
+        "reconfigure": "一鸣真鲜奶吧设置"
+      },
+      "channel_title": "一鸣真鲜奶吧",
+      "step": {
+        "user": {
+          "title": "添加一鸣真鲜奶吧",
+          "description": "请输入手机号码，点击提交后将发送验证码。",
+          "data": {
+            "phone": "手机号码"
+          }
+        },
+        "verify_code": {
+          "title": "输入验证码",
+          "description": "验证码已发送到 {phone}，请输入验证码完成登录。",
+          "data": {
+            "verification_code": "验证码"
+          }
+        },
+        "reconfigure": {
+          "title": "一鸣真鲜奶吧设置",
+          "data": {
+            "refresh_interval": "刷新间隔（分钟）",
+            "action": "操作"
+          }
+        },
+        "reconfigure_phone": {
+          "title": "重新登录 - 输入手机号",
+          "description": "请输入新的手机号码，验证码将发送到该号码。",
+          "data": {
+            "phone": "手机号码"
+          }
+        },
+        "reconfigure_verify_code": {
+          "title": "重新登录 - 输入验证码",
+          "description": "验证码已发送到 {phone}，请输入验证码完成登录。",
+          "data": {
+            "verification_code": "验证码"
+          }
+        }
+      },
+      "error": {
+        "code_send_failed": "验证码发送失败，请检查手机号码。",
+        "invalid_code": "验证码错误或已过期，请重新获取。",
+        "login_failed": "登录失败，请重试。",
+        "captcha_failed": "人机验证失败，请重试。",
+        "invalid_phone": "请输入正确的11位手机号码。"
+      },
+      "abort": {
+        "already_configured": "该一鸣账号已配置。",
+        "max_instances_reached": "已达到最大一鸣实例数量。",
+        "reconfigure_successful": "一鸣设置已更新。"
+      },
+      "entry_type": "一鸣真鲜奶吧服务"
+    },
+    "tongcheng": {
+      "initiate_flow": {
+        "user": "添加同程旅行",
+        "reconfigure": "同程旅行设置"
+      },
+      "channel_title": "同程旅行",
+      "step": {
+        "set_options": {
+          "title": "添加同程旅行",
+          "description": "📖 [配置指南](https://qclaw.qq.com/docs/chengxin)\n🔑 请在 QClaw 中完成同程程心授权后，将获取到的 Token 粘贴到下方。",
+          "data": {
+            "auth_token": "Token",
+            "refresh_interval": "刷新间隔（分钟）"
+          }
+        }
+      },
+      "error": {
+        "cannot_connect": "连接失败，请检查 Token。"
+      },
+      "abort": {
+        "already_configured": "该同程账号已配置。",
+        "max_instances_reached": "已达到最大同程实例数量。"
+      },
+      "entry_type": "同程旅行服务"
+    },
+    "baidu_map": {
+      "initiate_flow": {
+        "user": "添加百度地图",
+        "reconfigure": "百度地图设置"
+      },
+      "channel_title": "百度地图",
+      "step": {
+        "set_options": {
+          "title": "添加百度地图",
+          "description": "请输入你的百度地图开放平台 API Key（sk-ap- 开头）。\n\n📖 [配置指南](https://qclaw.qq.com/docs/212966665410375680)\n🔑 [获取 Token](https://lbs.baidu.com/apiconsole/agentplan)",
+          "data": {
+            "auth_token": "BAIDU_MAP_AUTH_TOKEN",
+            "refresh_interval": "刷新间隔（分钟）"
+          }
+        }
+      },
+      "error": {
+        "cannot_connect": "连接失败，请检查 API Key。"
+      },
+      "abort": {
+        "already_configured": "该百度地图 Key 已配置。",
+        "max_instances_reached": "已达到最大百度地图实例数量。"
+      },
+      "entry_type": "百度地图服务"
+    },
+    "music": {
+      "initiate_flow": {
+        "user": "添加音乐",
+        "reconfigure": "音乐设置"
+      },
+      "channel_title": "音乐",
+      "step": {
+        "set_options": {
+          "title": "添加音乐",
+          "description": "选择音乐平台，QQ音乐需要输入 API Key。\n\n[📖 如何获取 QQ音乐 Key？](https://qclaw.qq.com/docs/214847013744275456)",
+          "data": {
+            "platform": "平台",
+            "api_key": "API Key",
+            "cookie": "Cookie",
+            "refresh_interval": "刷新间隔（分钟）"
+          }
+        }
+      },
+      "error": {
+        "cannot_connect": "连接失败。"
+      },
+      "abort": {
+        "already_configured": "该平台已配置。",
+        "max_instances_reached": "已达到最大实例数量。"
+      },
+      "entry_type": "音乐服务"
+    },
+    "mcdonalds": {
+      "initiate_flow": {
+        "user": "添加麦当劳",
+        "reconfigure": "麦当劳设置"
+      },
+      "channel_title": "麦当劳",
+      "step": {
+        "set_options": {
+          "title": "添加麦当劳",
+          "description": "请输入你的麦当劳 MCP Token。\n\n📖 [配置指南](https://qclaw.qq.com/docs/215059947716583424)\n🔑 [获取 Token](https://open.mcd.cn/mcp)",
+          "data": {
+            "api_token": "MCP Token",
+            "refresh_interval": "刷新间隔（分钟）"
+          }
+        }
+      },
+      "error": {
+        "cannot_connect": "连接失败，请检查 MCP Token。"
+      },
+      "abort": {
+        "already_configured": "该麦当劳 Token 已配置。",
+        "max_instances_reached": "已达到最大麦当劳实例数量。"
+      },
+      "entry_type": "麦当劳服务"
+    },
+    "fliggy": {
+      "initiate_flow": {
+        "user": "添加飞猪旅行",
+        "reconfigure": "飞猪旅行设置"
+      },
+      "channel_title": "飞猪旅行",
+      "step": {
+        "set_options": {
+          "title": "添加飞猪旅行",
+          "description": "请输入你的飞猪 MCP API Key。\n\n[📖 如何获取 API Key？](https://flyai.open.fliggy.com/)",
+          "data": {
+            "api_key": "API Key",
+            "sign_secret": "签名密钥（可选）",
+            "refresh_interval": "刷新间隔（分钟）"
+          }
+        }
+      },
+      "error": {
+        "cannot_connect": "连接失败，请检查 API Key。"
+      },
+      "abort": {
+        "already_configured": "该飞猪 API Key 已配置。",
+        "max_instances_reached": "已达到最大飞猪实例数量。"
+      },
+      "entry_type": "飞猪旅行服务"
+    },
+    "gaode": {
+      "initiate_flow": {
+        "user": "添加高德地图",
+        "reconfigure": "高德地图设置"
+      },
+      "channel_title": "高德地图",
+      "step": {
+        "set_options": {
+          "title": "添加高德地图",
+          "description": "请输入你的高德地图开放平台 API Key 和安全密钥。\n\n[📖 如何获取 Key？](https://console.amap.com/dev/key/app)",
+          "data": {
+            "api_key": "API Key",
+            "security_code": "安全密钥（可选）",
+            "refresh_interval": "刷新间隔（分钟）"
+          }
+        }
+      },
+      "error": {
+        "cannot_connect": "连接失败，请检查 API Key。"
+      },
+      "abort": {
+        "already_configured": "该高德地图 Key 已配置。",
+        "max_instances_reached": "已达到最大高德地图实例数量。"
+      },
+      "entry_type": "高德地图服务"
+    },
+    "didi": {
+      "initiate_flow": {
+        "user": "添加滴滴出行",
+        "reconfigure": "滴滴出行设置"
+      },
+      "channel_title": "滴滴出行",
+      "step": {
+        "set_options": {
+          "title": "添加滴滴出行",
+          "description": "请输入你的滴滴 MCP Key。\n\n📖 [配置指南](https://mcp.didichuxing.com/)\n🔑 [获取 Key](https://mcp.didichuxing.com/)",
+          "data": {
+            "api_key": "DIDI_KEY",
+            "refresh_interval": "刷新间隔（分钟）"
+          }
+        }
+      },
+      "error": {
+        "cannot_connect": "连接失败，请检查 DIDI_KEY。"
+      },
+      "abort": {
+        "already_configured": "滴滴出行已配置。",
+        "max_instances_reached": "已达到最大实例数量。"
+      },
+      "entry_type": "滴滴出行服务"
+    }
+  },
+  "entity": {
+    "sensor": {
+      "status_meituan": {
+        "name": "连接状态",
+        "state": {
+          "connected": "已连接",
+          "disconnected": "未连接"
+        }
+      },
+      "status_ctrip": {
+        "name": "连接状态",
+        "state": {
+          "connected": "已连接",
+          "disconnected": "未连接"
+        }
+      },
+      "status_yiming": {
+        "name": "连接状态",
+        "state": {
+          "connected": "已连接",
+          "disconnected": "未连接"
+        }
+      },
+      "status_mcdonalds": {
+        "name": "连接状态",
+        "state": {
+          "connected": "已连接",
+          "disconnected": "未连接"
+        }
+      },
+      "status_tongcheng": {
+        "name": "连接状态",
+        "state": {
+          "connected": "已连接",
+          "disconnected": "未连接"
+        }
+      },
+      "status_baidu_map": {
+        "name": "连接状态",
+        "state": {
+          "connected": "已连接",
+          "disconnected": "未连接"
+        }
+      },
+      "status_music": {
+        "name": "连接状态",
+        "state": {
+          "connected": "已连接",
+          "disconnected": "未连接"
+        }
+      },
+      "status_fliggy": {
+        "name": "连接状态",
+        "state": {
+          "connected": "已连接",
+          "disconnected": "未连接"
+        }
+      },
+      "status_didi": {
+        "name": "连接状态",
+        "state": {
+          "connected": "已连接",
+          "disconnected": "未连接"
+        }
+      }
+    }
+  }
+}

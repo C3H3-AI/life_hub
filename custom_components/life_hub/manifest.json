@@ -1,0 +1,14 @@
+{
+  "domain": "life_hub",
+  "name": "Life Hub",
+  "version": "2026.07.1",
+  "homeassistant": "2024.12",
+  "codeowners": ["@C3H3-AI"],
+  "config_flow": true,
+  "integration_type": "hub",
+  "iot_class": "cloud_polling",
+  "documentation": "https://github.com/C3H3-AI/ha-life-hub",
+  "issue_tracker": "https://github.com/C3H3-AI/ha-life-hub/issues",
+  "requirements": ["pycryptodome>=3.21", "cryptography>=42.0"],
+  "loggers": ["custom_components.life_hub"]
+}
