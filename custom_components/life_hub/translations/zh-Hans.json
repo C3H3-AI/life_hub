@@ -41,31 +41,6 @@
       },
       "entry_type": "美团服务"
     },
-    "meituan_order": {
-      "initiate_flow": {
-        "user": "添加美团优惠下单",
-        "reconfigure": "美团优惠下单设置"
-      },
-      "channel_title": "美团优惠下单",
-      "step": {
-        "set_options": {
-          "title": "添加美团优惠下单",
-          "description": "请在 QClaw 集成面板中完成美团跑腿助手扫码授权，将获取到的 token 填入 auth_token。\n\n🔑 [获取 Token](https://developer.meituan.com/zh/v2/dev/token)",
-          "data": {
-            "auth_token": "Auth Token",
-            "refresh_interval": "刷新间隔（分钟）"
-          }
-        }
-      },
-      "error": {
-        "cannot_connect": "连接失败，请检查 Token。"
-      },
-      "abort": {
-        "already_configured": "美团优惠下单已配置。",
-        "max_instances_reached": "已达到最大实例数量。"
-      },
-      "entry_type": "美团优惠下单服务"
-    },
     "ctrip": {
       "initiate_flow": {
         "user": "添加携程旅行",
@@ -147,31 +122,6 @@
         "reconfigure_successful": "一鸣设置已更新。"
       },
       "entry_type": "一鸣真鲜奶吧服务"
-    },
-    "tongcheng": {
-      "initiate_flow": {
-        "user": "添加同程旅行",
-        "reconfigure": "同程旅行设置"
-      },
-      "channel_title": "同程旅行",
-      "step": {
-        "set_options": {
-          "title": "添加同程旅行",
-          "description": "📖 [配置指南](https://qclaw.qq.com/docs/chengxin)\n🔑 请在 QClaw 中完成同程程心授权后，将获取到的 Token 粘贴到下方。",
-          "data": {
-            "auth_token": "Token",
-            "refresh_interval": "刷新间隔（分钟）"
-          }
-        }
-      },
-      "error": {
-        "cannot_connect": "连接失败，请检查 Token。"
-      },
-      "abort": {
-        "already_configured": "该同程账号已配置。",
-        "max_instances_reached": "已达到最大同程实例数量。"
-      },
-      "entry_type": "同程旅行服务"
     },
     "baidu_map": {
       "initiate_flow": {
@@ -358,13 +308,6 @@
           "disconnected": "未连接"
         }
       },
-      "status_tongcheng": {
-        "name": "连接状态",
-        "state": {
-          "connected": "已连接",
-          "disconnected": "未连接"
-        }
-      },
       "status_baidu_map": {
         "name": "连接状态",
         "state": {
@@ -380,6 +323,20 @@
         }
       },
       "status_fliggy": {
+        "name": "连接状态",
+        "state": {
+          "connected": "已连接",
+          "disconnected": "未连接"
+        }
+      },
+      "status_gaode": {
+        "name": "连接状态",
+        "state": {
+          "connected": "已连接",
+          "disconnected": "未连接"
+        }
+      },
+      "status_meituan_travel": {
         "name": "连接状态",
         "state": {
           "connected": "已连接",

@@ -63,10 +63,25 @@ def _normalize_coupons(parsed):
     return None
 
 
+def _extract_count(text):
+    """从 MCP markdown 文本中提取数量。例如 "共 10 张可用优惠券" → 10"""
+    if text is None:
+        return None
+    if isinstance(text, (int, float)):
+        return int(text)
+    if isinstance(text, list):
+        return len(text)
+    if isinstance(text, str):
+        import re
+        m = re.search(r"共\s*(\d+)\s*[张条个]", text)
+        return int(m.group(1)) if m else 0
+    return 0
+
+
 # Exported for stale-entity cleanup in sensor.py.
 SENSOR_SUFFIXES: list[str] = [
     "available_points", "accumulative_points", "expiring_points",
-    "available_coupons",
+    "available_coupons", "my_coupons", "active_campaigns", "active_orders",
 ]
 
 
@@ -118,6 +133,30 @@ class McdonaldsDataCoordinator(DataUpdateCoordinator[dict[str, Any]]):
         except Exception as err:
             _LOGGER.warning("McDonald's available-coupons failed: %s", err)
             results["coupons"] = None
+        # Query my coupons (user's own coupon list)
+        try:
+            raw = await client.call_tool("query-my-coupons", {})
+            parsed = parse_mcp_content(raw)
+            results["my_coupons"] = parsed
+        except Exception as err:
+            _LOGGER.warning("McDonald's query-my-coupons failed: %s", err)
+            results["my_coupons"] = None
+        # Query campaign calendar
+        try:
+            raw = await client.call_tool("campaign-calendar", {})
+            parsed = parse_mcp_content(raw)
+            results["campaigns"] = parsed
+        except Exception as err:
+            _LOGGER.warning("McDonald's campaign-calendar failed: %s", err)
+            results["campaigns"] = None
+        # Query order list
+        try:
+            raw = await client.call_tool("order-list", {})
+            parsed = parse_mcp_content(raw)
+            results["orders"] = parsed
+        except Exception as err:
+            _LOGGER.warning("McDonald's order-list failed: %s", err)
+            results["orders"] = None
         return results
 
 
@@ -186,5 +225,20 @@ def build_sensors(
         LifeHubSensor(entry, provider_key, provider_rt, coordinator,
             key="available_coupons", name="可领优惠券", icon="mdi:ticket-confirmation",
             value_fn=available_coupons_val, attrs_fn=available_coupons_attrs,
+            state_class=SensorStateClass.MEASUREMENT),
+        # My coupons count
+        LifeHubSensor(entry, provider_key, provider_rt, coordinator,
+            key="my_coupons", name="我的优惠券", icon="mdi:wallet-giftcard",
+            value_fn=lambda d: _extract_count(d.get("my_coupons")),
+            state_class=SensorStateClass.MEASUREMENT),
+        # Active campaign count
+        LifeHubSensor(entry, provider_key, provider_rt, coordinator,
+            key="active_campaigns", name="进行中活动", icon="mdi:calendar-star",
+            value_fn=lambda d: _extract_count(d.get("campaigns")),
+            state_class=SensorStateClass.MEASUREMENT),
+        # Active orders count
+        LifeHubSensor(entry, provider_key, provider_rt, coordinator,
+            key="active_orders", name="进行中订单", icon="mdi:clipboard-list",
+            value_fn=lambda d: _extract_count(d.get("orders")),
             state_class=SensorStateClass.MEASUREMENT),
     ]

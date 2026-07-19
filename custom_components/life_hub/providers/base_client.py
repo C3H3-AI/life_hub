@@ -89,33 +89,30 @@ class McpClientBase:
         return await self._do_rpc(body, headers)
 
 
-def parse_mcp_content(response: dict) -> dict | list | None:
+def parse_mcp_content(response: dict) -> dict | list | str | None:
     """Extract content from an MCP JSON-RPC response.
 
     Tries, in order:
-      1. ``content[].text`` parsed as JSON (common for structured tool results).
-      2. ``structuredContent`` (some MCP servers put the real data here while
-         ``content`` only carries a human-readable markdown description).
-      3. the raw ``content[].text`` string if it isn't valid JSON.
-
-    Returns a dict/list (parsed), a string (raw text), or None.
+      1. ``structuredContent`` (fast path — some MCP servers put real data here).
+      2. ``content[].text`` parsed as JSON (structured tool results).
+      3. raw ``content[].text`` string fallback.
     """
     result = response.get("result", {})
+    # Fast path: structuredContent — skip the json.loads attempt on markdown text.
+    sc = result.get("structuredContent")
+    if sc is not None:
+        return sc
+    # Parse content[].text as JSON if possible.
     content = result.get("content", [])
-    if content and isinstance(content, list):
+    if isinstance(content, list):
         for item in content:
             if item.get("type") == "text":
                 try:
                     return json.loads(item["text"])
                 except (json.JSONDecodeError, KeyError, TypeError):
-                    # 文本非 JSON（如 MCP 返回说明性 markdown），退回结构化内容
                     pass
-    # 回退：优先使用结构化内容（部分 MCP 真数据在此）
-    sc = result.get("structuredContent")
-    if sc is not None:
-        return sc
-    # 最后兜底：若 content 文本未能解析为 JSON，返回原始文本
-    if content and isinstance(content, list):
+    # Fallback: raw text.
+    if isinstance(content, list):
         for item in content:
             if item.get("type") == "text":
                 return item.get("text")

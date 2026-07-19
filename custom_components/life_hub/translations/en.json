@@ -123,31 +123,6 @@
       },
       "entry_type": "Yiming Fresh Milk Service"
     },
-    "tongcheng": {
-      "initiate_flow": {
-        "user": "Add Tongcheng Travel",
-        "reconfigure": "Tongcheng Travel Settings"
-      },
-      "channel_title": "Tongcheng Travel",
-      "step": {
-        "set_options": {
-          "title": "Add Tongcheng Travel",
-          "description": "Enter your Tongcheng OAuth Token.\n\n[📖 How to get Token?](https://m.ly.com/memberauth/oauth2/authorize?client_id=qclaw-288267139f9f1d&redirect_uri=https%3A%2F%2Fauth.ap-guangzhou.tencentags.com%2Fidentities%2Foauth2%2Fcallback%2F2d131483-3941-424d-8b9b-21b368953736&response_type=code&scope=read%20write)",
-          "data": {
-            "token": "Token",
-            "refresh_interval": "Refresh interval (minutes)"
-          }
-        }
-      },
-      "error": {
-        "cannot_connect": "Failed to connect. Please check your Token."
-      },
-      "abort": {
-        "already_configured": "This Tongcheng account is already configured.",
-        "max_instances_reached": "Maximum number of Tongcheng instances reached."
-      },
-      "entry_type": "Tongcheng Travel Service"
-    },
     "baidu_map": {
       "initiate_flow": {
         "user": "Add Baidu Maps",
@@ -260,7 +235,7 @@
       "step": {
         "set_options": {
           "title": "Add Gaode Maps",
-          "description": "Enter your Gaode Maps API Key and security code.\n\n[📖 How to get Key?](https://lbs.amap.com/api/javascript-api-v2/guide/services/web-api)",
+          "description": "Enter your Gaode Maps API Key and security code.\n\n[📖 How to get Key?](https://console.amap.com/dev/key/app)",
           "data": {
             "api_key": "API Key",
             "security_code": "Security Code (optional)",
@@ -276,6 +251,31 @@
         "max_instances_reached": "Maximum number of Gaode Maps instances reached."
       },
       "entry_type": "Gaode Maps Service"
+    },
+    "didi": {
+      "initiate_flow": {
+        "user": "Add Didi Travel",
+        "reconfigure": "Didi Travel Settings"
+      },
+      "channel_title": "Didi Travel",
+      "step": {
+        "set_options": {
+          "title": "Add Didi Travel",
+          "description": "Enter your Didi MCP Key.\n\n📖 [Configuration Guide](https://mcp.didichuxing.com/)\n🔑 [Get Key](https://mcp.didichuxing.com/)",
+          "data": {
+            "api_key": "DIDI_KEY",
+            "refresh_interval": "Refresh interval (minutes)"
+          }
+        }
+      },
+      "error": {
+        "cannot_connect": "Failed to connect. Please check DIDI_KEY."
+      },
+      "abort": {
+        "already_configured": "Didi is already configured.",
+        "max_instances_reached": "Maximum instances reached."
+      },
+      "entry_type": "Didi Travel Service"
     }
   },
   "entity": {
@@ -308,13 +308,6 @@
           "disconnected": "Disconnected"
         }
       },
-      "status_tongcheng": {
-        "name": "Status",
-        "state": {
-          "connected": "Connected",
-          "disconnected": "Disconnected"
-        }
-      },
       "status_baidu_map": {
         "name": "Status",
         "state": {
@@ -337,6 +330,20 @@
         }
       },
       "status_gaode": {
+        "name": "Status",
+        "state": {
+          "connected": "Connected",
+          "disconnected": "Disconnected"
+        }
+      },
+      "status_meituan_travel": {
+        "name": "Status",
+        "state": {
+          "connected": "Connected",
+          "disconnected": "Disconnected"
+        }
+      },
+      "status_didi": {
         "name": "Status",
         "state": {
           "connected": "Connected",

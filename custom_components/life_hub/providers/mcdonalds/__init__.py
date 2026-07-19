@@ -63,7 +63,7 @@ async def setup_provider(
 ) -> ProviderRuntime:
     token = config["api_token"]
     session = async_get_clientsession(hass)
-    status = "connected"
+    _status = "connected"
 
     client = McdonaldsClient(session, token)
 
@@ -71,10 +71,17 @@ async def setup_provider(
         pass
 
     def get_status() -> str:
-        return status
+        return _status
 
     async def _health_check() -> bool:
-        return await client.health_check()
+        nonlocal _status
+        try:
+            ok = await client.health_check()
+            _status = "connected" if ok else "disconnected"
+            return ok
+        except Exception:
+            _status = "disconnected"
+            return False
 
     return ProviderRuntime(
         key=PROVIDER_KEY, title=PROVIDER_NAME, subentry_id=subentry_id,
