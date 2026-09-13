@@ -11,6 +11,7 @@
     }
   },
   "options": {
+    "step": {},
     "abort": {
       "no_options": "No options available."
     }
@@ -21,11 +22,10 @@
         "user": "Add Meituan",
         "reconfigure": "Meituan Settings"
       },
-      "channel_title": "Meituan",
       "step": {
         "set_options": {
           "title": "Add Meituan",
-          "description": "Create a personal developer Token at developer.meituan.com, scan QR code to authorize, then paste it here.\n\n[📖 How to get Token?](https://developer.meituan.com/)",
+          "description": "Create a personal developer Token at developer.meituan.com, scan QR code to authorize, then paste it here.",
           "data": {
             "api_token": "API Token",
             "refresh_interval": "Refresh interval (minutes)"
@@ -39,18 +39,18 @@
         "already_configured": "Meituan is already configured.",
         "max_instances_reached": "Maximum number of Meituan instances reached."
       },
-      "entry_type": "Meituan Service"
+      "entry_type": "Meituan Service",
+      "flow_title": "Meituan"
     },
     "ctrip": {
       "initiate_flow": {
         "user": "Add Ctrip Travel",
         "reconfigure": "Ctrip Travel Settings"
       },
-      "channel_title": "Ctrip Travel",
       "step": {
         "set_options": {
           "title": "Add Ctrip Travel",
-          "description": "Enter your Ctrip WenDao API Token.\n\n[📖 How to get Token?](https://qclaw.qq.com/docs/208231741261246464)",
+          "description": "Enter your Ctrip WenDao API Token.",
           "data": {
             "api_token": "API Token",
             "refresh_interval": "Refresh interval (minutes)"
@@ -64,14 +64,14 @@
         "already_configured": "Ctrip is already configured.",
         "max_instances_reached": "Maximum number of Ctrip instances reached."
       },
-      "entry_type": "Ctrip Travel Service"
+      "entry_type": "Ctrip Travel Service",
+      "flow_title": "Ctrip Travel"
     },
     "yiming": {
       "initiate_flow": {
         "user": "Add Yiming",
         "reconfigure": "Yiming Settings"
       },
-      "channel_title": "Yiming",
       "step": {
         "user": {
           "title": "Add Yiming Fresh Milk Bar",
@@ -121,18 +121,18 @@
         "max_instances_reached": "Maximum number of Yiming instances reached.",
         "reconfigure_successful": "Yiming settings updated."
       },
-      "entry_type": "Yiming Fresh Milk Service"
+      "entry_type": "Yiming Fresh Milk Service",
+      "flow_title": "Yiming"
     },
     "baidu_map": {
       "initiate_flow": {
         "user": "Add Baidu Maps",
         "reconfigure": "Baidu Maps Settings"
       },
-      "channel_title": "Baidu Maps",
       "step": {
         "set_options": {
           "title": "Add Baidu Maps",
-          "description": "Enter your Baidu Maps API Key.\n\n[📖 How to get Key?](https://qclaw.qq.com/docs/212966665410375680)",
+          "description": "Enter your Baidu Maps API Key.",
           "data": {
             "api_key": "API Key",
             "refresh_interval": "Refresh interval (minutes)"
@@ -146,18 +146,18 @@
         "already_configured": "Baidu Maps is already configured.",
         "max_instances_reached": "Maximum number of Baidu Maps instances reached."
       },
-      "entry_type": "Baidu Maps Service"
+      "entry_type": "Baidu Maps Service",
+      "flow_title": "Baidu Maps"
     },
     "music": {
       "initiate_flow": {
         "user": "Add Music",
         "reconfigure": "Music Settings"
       },
-      "channel_title": "Music",
       "step": {
         "set_options": {
           "title": "Add Music",
-          "description": "Select a music platform. QQ Music requires an API Key.\n\n[📖 How to get QQ Music Key?](https://qclaw.qq.com/docs/214847013744275456)",
+          "description": "Select a music platform. QQ Music requires an API Key.",
           "data": {
             "platform": "Platform",
             "api_key": "API Key",
@@ -173,18 +173,18 @@
         "already_configured": "This platform is already configured.",
         "max_instances_reached": "Maximum instances reached."
       },
-      "entry_type": "Music Service"
+      "entry_type": "Music Service",
+      "flow_title": "Music"
     },
     "mcdonalds": {
       "initiate_flow": {
         "user": "Add McDonald's",
         "reconfigure": "McDonald's Settings"
       },
-      "channel_title": "McDonald's",
       "step": {
         "set_options": {
           "title": "Add McDonald's",
-          "description": "Enter your McDonald's MCP Token.\n\n[📖 How to get Token?](https://qclaw.qq.com/docs/215059947716583424)",
+          "description": "Enter your McDonald's MCP Token.",
           "data": {
             "api_token": "MCP Token",
             "refresh_interval": "Refresh interval (minutes)"
@@ -198,18 +198,18 @@
         "already_configured": "This McDonald's token is already configured.",
         "max_instances_reached": "Maximum number of McDonald's instances reached."
       },
-      "entry_type": "McDonald's Service"
+      "entry_type": "McDonald's Service",
+      "flow_title": "McDonald's"
     },
     "fliggy": {
       "initiate_flow": {
         "user": "Add Fliggy Travel",
         "reconfigure": "Fliggy Travel Settings"
       },
-      "channel_title": "Fliggy Travel",
       "step": {
         "set_options": {
           "title": "Add Fliggy Travel",
-          "description": "Enter your Fliggy MCP API Key.\n\n[📖 How to get API Key?](https://flyai.open.fliggy.com/)",
+          "description": "Enter your Fliggy MCP API Key.",
           "data": {
             "api_key": "API Key",
             "sign_secret": "Sign Secret (optional)",
@@ -224,18 +224,18 @@
         "already_configured": "This Fliggy API Key is already configured.",
         "max_instances_reached": "Maximum number of Fliggy instances reached."
       },
-      "entry_type": "Fliggy Travel Service"
+      "entry_type": "Fliggy Travel Service",
+      "flow_title": "Fliggy Travel"
     },
     "gaode": {
       "initiate_flow": {
         "user": "Add Gaode Maps",
         "reconfigure": "Gaode Maps Settings"
       },
-      "channel_title": "Gaode Maps",
       "step": {
         "set_options": {
           "title": "Add Gaode Maps",
-          "description": "Enter your Gaode Maps API Key and security code.\n\n[📖 How to get Key?](https://console.amap.com/dev/key/app)",
+          "description": "Enter your Gaode Maps API Key and security code.",
           "data": {
             "api_key": "API Key",
             "security_code": "Security Code (optional)",
@@ -250,18 +250,18 @@
         "already_configured": "This Gaode Maps Key is already configured.",
         "max_instances_reached": "Maximum number of Gaode Maps instances reached."
       },
-      "entry_type": "Gaode Maps Service"
+      "entry_type": "Gaode Maps Service",
+      "flow_title": "Gaode Maps"
     },
     "didi": {
       "initiate_flow": {
         "user": "Add Didi Travel",
         "reconfigure": "Didi Travel Settings"
       },
-      "channel_title": "Didi Travel",
       "step": {
         "set_options": {
           "title": "Add Didi Travel",
-          "description": "Enter your Didi MCP Key.\n\n📖 [Configuration Guide](https://mcp.didichuxing.com/)\n🔑 [Get Key](https://mcp.didichuxing.com/)",
+          "description": "Enter your Didi MCP Key.",
           "data": {
             "api_key": "DIDI_KEY",
             "refresh_interval": "Refresh interval (minutes)"
@@ -275,7 +275,8 @@
         "already_configured": "Didi is already configured.",
         "max_instances_reached": "Maximum instances reached."
       },
-      "entry_type": "Didi Travel Service"
+      "entry_type": "Didi Travel Service",
+      "flow_title": "Didi Travel"
     }
   },
   "entity": {
