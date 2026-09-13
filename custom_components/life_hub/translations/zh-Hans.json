@@ -11,6 +11,7 @@
     }
   },
   "options": {
+    "step": {},
     "abort": {
       "no_options": "无可配置选项。"
     }
@@ -21,11 +22,10 @@
         "user": "添加美团",
         "reconfigure": "美团设置"
       },
-      "channel_title": "美团",
       "step": {
         "set_options": {
           "title": "添加美团",
-          "description": "请输入你的美团开发者 Token。\n\n📖 [配置指南](https://qclaw.qq.com/docs/210805139605942272.html)\n🔑 [获取 Token](https://developer.meituan.com/zh/v2/dev/token)",
+          "description": "请输入你的美团开发者 Token。",
           "data": {
             "auth_token": "API Token",
             "refresh_interval": "刷新间隔（分钟）"
@@ -39,18 +39,18 @@
         "already_configured": "美团已配置。",
         "max_instances_reached": "已达到最大美团实例数量。"
       },
-      "entry_type": "美团服务"
+      "entry_type": "美团服务",
+      "flow_title": "美团"
     },
     "ctrip": {
       "initiate_flow": {
         "user": "添加携程旅行",
         "reconfigure": "携程旅行设置"
       },
-      "channel_title": "携程旅行",
       "step": {
         "set_options": {
           "title": "添加携程旅行",
-          "description": "请输入你的携程问道 API Token。\n\n📖 [配置指南](https://qclaw.qq.com/docs/208231741261246464)\n🔑 [获取 Token](http://t.ctrip.cn/28J6RhL)",
+          "description": "请输入你的携程问道 API Token。",
           "data": {
             "auth_token": "API Token",
             "refresh_interval": "刷新间隔（分钟）"
@@ -64,14 +64,14 @@
         "already_configured": "该携程 Token 已配置。",
         "max_instances_reached": "已达到最大携程实例数量。"
       },
-      "entry_type": "携程旅行服务"
+      "entry_type": "携程旅行服务",
+      "flow_title": "携程旅行"
     },
     "yiming": {
       "initiate_flow": {
         "user": "添加一鸣真鲜奶吧",
         "reconfigure": "一鸣真鲜奶吧设置"
       },
-      "channel_title": "一鸣真鲜奶吧",
       "step": {
         "user": {
           "title": "添加一鸣真鲜奶吧",
@@ -121,18 +121,18 @@
         "max_instances_reached": "已达到最大一鸣实例数量。",
         "reconfigure_successful": "一鸣设置已更新。"
       },
-      "entry_type": "一鸣真鲜奶吧服务"
+      "entry_type": "一鸣真鲜奶吧服务",
+      "flow_title": "一鸣真鲜奶吧"
     },
     "baidu_map": {
       "initiate_flow": {
         "user": "添加百度地图",
         "reconfigure": "百度地图设置"
       },
-      "channel_title": "百度地图",
       "step": {
         "set_options": {
           "title": "添加百度地图",
-          "description": "请输入你的百度地图开放平台 API Key（sk-ap- 开头）。\n\n📖 [配置指南](https://qclaw.qq.com/docs/212966665410375680)\n🔑 [获取 Token](https://lbs.baidu.com/apiconsole/agentplan)",
+          "description": "请输入你的百度地图开放平台 API Key（sk-ap- 开头）。",
           "data": {
             "auth_token": "BAIDU_MAP_AUTH_TOKEN",
             "refresh_interval": "刷新间隔（分钟）"
@@ -146,18 +146,18 @@
         "already_configured": "该百度地图 Key 已配置。",
         "max_instances_reached": "已达到最大百度地图实例数量。"
       },
-      "entry_type": "百度地图服务"
+      "entry_type": "百度地图服务",
+      "flow_title": "百度地图"
     },
     "music": {
       "initiate_flow": {
         "user": "添加音乐",
         "reconfigure": "音乐设置"
       },
-      "channel_title": "音乐",
       "step": {
         "set_options": {
           "title": "添加音乐",
-          "description": "选择音乐平台，QQ音乐需要输入 API Key。\n\n[📖 如何获取 QQ音乐 Key？](https://qclaw.qq.com/docs/214847013744275456)",
+          "description": "选择音乐平台，QQ音乐需要输入 API Key。",
           "data": {
             "platform": "平台",
             "api_key": "API Key",
@@ -173,18 +173,18 @@
         "already_configured": "该平台已配置。",
         "max_instances_reached": "已达到最大实例数量。"
       },
-      "entry_type": "音乐服务"
+      "entry_type": "音乐服务",
+      "flow_title": "音乐"
     },
     "mcdonalds": {
       "initiate_flow": {
         "user": "添加麦当劳",
         "reconfigure": "麦当劳设置"
       },
-      "channel_title": "麦当劳",
       "step": {
         "set_options": {
           "title": "添加麦当劳",
-          "description": "请输入你的麦当劳 MCP Token。\n\n📖 [配置指南](https://qclaw.qq.com/docs/215059947716583424)\n🔑 [获取 Token](https://open.mcd.cn/mcp)",
+          "description": "请输入你的麦当劳 MCP Token。",
           "data": {
             "api_token": "MCP Token",
             "refresh_interval": "刷新间隔（分钟）"
@@ -198,18 +198,18 @@
         "already_configured": "该麦当劳 Token 已配置。",
         "max_instances_reached": "已达到最大麦当劳实例数量。"
       },
-      "entry_type": "麦当劳服务"
+      "entry_type": "麦当劳服务",
+      "flow_title": "麦当劳"
     },
     "fliggy": {
       "initiate_flow": {
         "user": "添加飞猪旅行",
         "reconfigure": "飞猪旅行设置"
       },
-      "channel_title": "飞猪旅行",
       "step": {
         "set_options": {
           "title": "添加飞猪旅行",
-          "description": "请输入你的飞猪 MCP API Key。\n\n[📖 如何获取 API Key？](https://flyai.open.fliggy.com/)",
+          "description": "请输入你的飞猪 MCP API Key。",
           "data": {
             "api_key": "API Key",
             "sign_secret": "签名密钥（可选）",
@@ -224,18 +224,18 @@
         "already_configured": "该飞猪 API Key 已配置。",
         "max_instances_reached": "已达到最大飞猪实例数量。"
       },
-      "entry_type": "飞猪旅行服务"
+      "entry_type": "飞猪旅行服务",
+      "flow_title": "飞猪旅行"
     },
     "gaode": {
       "initiate_flow": {
         "user": "添加高德地图",
         "reconfigure": "高德地图设置"
       },
-      "channel_title": "高德地图",
       "step": {
         "set_options": {
           "title": "添加高德地图",
-          "description": "请输入你的高德地图开放平台 API Key 和安全密钥。\n\n[📖 如何获取 Key？](https://console.amap.com/dev/key/app)",
+          "description": "请输入你的高德地图开放平台 API Key 和安全密钥。",
           "data": {
             "api_key": "API Key",
             "security_code": "安全密钥（可选）",
@@ -250,18 +250,18 @@
         "already_configured": "该高德地图 Key 已配置。",
         "max_instances_reached": "已达到最大高德地图实例数量。"
       },
-      "entry_type": "高德地图服务"
+      "entry_type": "高德地图服务",
+      "flow_title": "高德地图"
     },
     "didi": {
       "initiate_flow": {
         "user": "添加滴滴出行",
         "reconfigure": "滴滴出行设置"
       },
-      "channel_title": "滴滴出行",
       "step": {
         "set_options": {
           "title": "添加滴滴出行",
-          "description": "请输入你的滴滴 MCP Key。\n\n📖 [配置指南](https://mcp.didichuxing.com/)\n🔑 [获取 Key](https://mcp.didichuxing.com/)",
+          "description": "请输入你的滴滴 MCP Key。",
           "data": {
             "api_key": "DIDI_KEY",
             "refresh_interval": "刷新间隔（分钟）"
@@ -275,7 +275,8 @@
         "already_configured": "滴滴出行已配置。",
         "max_instances_reached": "已达到最大实例数量。"
       },
-      "entry_type": "滴滴出行服务"
+      "entry_type": "滴滴出行服务",
+      "flow_title": "滴滴出行"
     }
   },
   "entity": {
